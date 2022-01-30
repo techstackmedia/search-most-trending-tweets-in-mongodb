@@ -4,7 +4,7 @@ const createCourse = async data => {
   const course = new Course({
     name: data.name,
     author: data.author,
-    tags: [data.tags[0], data.tags[1]],
+    tags: data.tags,
     message: data.message,
     isPublished: data.isPublished,
   });
@@ -13,7 +13,7 @@ const createCourse = async data => {
 };
 
 const searchCourse = async () => {
-  const search = await Course.find({ id: '/^#/' }).limit(6);
+  const search = await Course.find({ id: '/^#/' });
   for (let i = 0; i < search.length; i++) {
    [search[i].message]
   }

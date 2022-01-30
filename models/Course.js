@@ -4,7 +4,9 @@ const courseSchema = new mongoose.Schema(
   {
     name: String,
     author: String,
-    tags: [String],
+    tags: {
+      type: Array,
+    },
     message: String,
     isPublished: Boolean,
   },
