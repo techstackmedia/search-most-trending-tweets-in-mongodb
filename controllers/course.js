@@ -15,30 +15,30 @@ const createCourse = async data => {
 const searchCourse = async () => {
   const search = await Course.find({ id: '/^#/' });
   for (let i = 0; i < search.length; i++) {
-   [search[i].message]
+    [search[i].message];
   }
 
   const func = () => {
-    const tweets =  search.map(item => {
-      return item.message
-    })
+    const tweets = search.map(item => {
+      return item.message;
+    });
     let obj = {};
-    
+
     tweets.forEach(tweet => {
-      let twit = tweet.split("#");
-      
-      for(let i = 1; i < twit.length; i++) {
-        let item = twit[i].split(" ")[0];
-       
-        if(obj[item]) {
-          obj[item]++
-        } else obj[item] = 1
+      let twit = tweet.split('#');
+
+      for (let i = 1; i < twit.length; i++) {
+        let item = twit[i].split(' ')[0];
+
+        if (obj[item]) {
+          obj[item]++;
+        } else obj[item] = 1;
       }
-    })
-    
-    console.log(obj)
+    });
+
+    console.log(obj);
   };
-  
+
   func();
 };
 

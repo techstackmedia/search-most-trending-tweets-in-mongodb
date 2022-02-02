@@ -1,0 +1,19 @@
+{
+  "name": "bin",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "main": "www.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "runner": "./www.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "debug": "^4.3.3"
+  }
+}
